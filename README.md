@@ -10,3 +10,7 @@ Controles: clic izquierdo (o mantener) para caminar, rueda del mouse para zoom.
 
 ---
 Este repo solo tiene las descargas. `latest.json` y `pck/` los usa el actualizador del juego.
+
+## Android
+Bajá e instalá la app desde el celular: https://github.com/IDellamea/JuegoLow-releases/raw/main/JuegoLow.apk
+(Android pide permitir "instalar apps de origen desconocido" la primera vez.)
