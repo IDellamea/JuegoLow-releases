@@ -10,10 +10,16 @@ cd "$HOME"
 set +e
 while true; do
   echo "[JuegoLow] Buscando la última versión en $URL"
-  if curl -fsSL "$URL?t=$(date +%s)" -o latest.json; then
-    PCK_URL=$(tr -d '\n' < latest.json | sed -n 's/.*"pck_url": *"\([^"]*\)".*/\1/p')
-    SHA=$(tr -d '\n' < latest.json | sed -n 's/.*"sha256": *"\([^"]*\)".*/\1/p')
-    VERSION=$(tr -d '\n' < latest.json | sed -n 's/.*"version": *"\([^"]*\)".*/\1/p')
+  # Primero la API de GitHub (sin caché); si falla, la dirección raw (caché de hasta 5 min).
+  if { [ -z "$LATEST_URL" ] && curl -fsSL -H "Accept: application/vnd.github.raw+json" -H "User-Agent: JuegoLow-servidor" \
+         "https://api.github.com/repos/IDellamea/JuegoLow-releases/contents/latest.json?ref=main" -o latest.json; } \
+     || curl -fsSL "$URL?t=$(date +%s)" -o latest.json; then
+    J=$(tr -d '\n' < latest.json)
+    campo() { printf '%s' "$J" | sed -n "s/.*\"$1\": *\"\([^\"]*\)\".*/\1/p"; }
+    # El servidor usa su propia versión (server_*); si no existe, la del cliente.
+    PCK_URL=$(campo server_pck_url); [ -n "$PCK_URL" ] || PCK_URL=$(campo pck_url)
+    SHA=$(campo server_sha256); [ -n "$SHA" ] || SHA=$(campo sha256)
+    VERSION=$(campo server_version); [ -n "$VERSION" ] || VERSION=$(campo version)
     echo "[JuegoLow] Versión $VERSION"
     if curl -fsSL "$PCK_URL" -o JuegoLow.pck.tmp && echo "$SHA  JuegoLow.pck.tmp" | sha256sum -c - > /dev/null; then
       mv JuegoLow.pck.tmp JuegoLow.pck

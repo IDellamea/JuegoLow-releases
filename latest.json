@@ -1,9 +1,14 @@
 {
-  "version": "0.4.1",
+  "version": "0.4.2",
   "engine": "4.7.2",
-  "pck_url": "https://raw.githubusercontent.com/IDellamea/JuegoLow-releases/main/pck/JuegoLow_0.4.1.pck",
-  "sha256": "979b32717e7a41c29d124c54142d7c69fca01cd67b1c6ccdcf912876b89410a7",
+  "protocol": 2,
+  "pck_url": "https://raw.githubusercontent.com/IDellamea/JuegoLow-releases/main/pck/JuegoLow_0.4.2.pck",
+  "sha256": "8d36e7de5698c2a854f9eafcdeeff37167d9b93277f1b2a4611930b7f78031d3",
   "installer_url": "https://github.com/IDellamea/JuegoLow-releases/raw/main/JuegoLow_Setup.exe",
+  "server_version": "0.4.2",
+  "server_pck_url": "https://raw.githubusercontent.com/IDellamea/JuegoLow-releases/main/pck/JuegoLow_0.4.2.pck",
+  "server_sha256": "8d36e7de5698c2a854f9eafcdeeff37167d9b93277f1b2a4611930b7f78031d3",
+  "server_hash": "bcebf434f57df691ca4f0e906d6e8cd20ae11143815059ed5f43711acd1a2b47",
   "android_apk_url": "https://github.com/IDellamea/JuegoLow-releases/raw/main/JuegoLow.apk",
-  "android_sha256": "4e90c02274876cba8a4d4fee2342f0e67f49418470f7659cb1fc5eaa50ae3c2a"
+  "android_sha256": "2bcaa1241c2d4c3c9f7d460f177d7b2916ed4849691918d6a7fc44817352f2ed"
 }
