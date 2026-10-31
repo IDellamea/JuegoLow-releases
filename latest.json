@@ -1,7 +1,7 @@
 {
-  "version": "0.3.4",
+  "version": "0.3.5",
   "engine": "4.7.2",
-  "pck_url": "https://raw.githubusercontent.com/IDellamea/JuegoLow-releases/main/pck/JuegoLow_0.3.4.pck",
-  "sha256": "0fd5efe6959741f4076eccc18df5d7e375c2e4b41dceb1b47f145df2b9b1e361",
+  "pck_url": "https://raw.githubusercontent.com/IDellamea/JuegoLow-releases/main/pck/JuegoLow_0.3.5.pck",
+  "sha256": "b0ee4eaee70db13c9f1a356d1e75e029be3a3657b93cc31a7672789b6a4a4ea0",
   "installer_url": "https://github.com/IDellamea/JuegoLow-releases/raw/main/JuegoLow_Setup.exe"
 }
